@@ -1,41 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🚀 Next.js Chrome Extension Boilerplate
 
-## Getting Started
+A modern **Next.js-based Chrome Extension Boilerplate** using **ShadCN, TailwindCSS**. This is designed to streamline building Chrome extensions with Next.js.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 💂️ Folder Structure
+```
+💚 nextjs-chrome-boilerplate
+📂 public          # Chrome extension assets (manifest, icons, service worker)
+📂 src
+📌 📂 components  # UI components
+📌 📂 context     # Global state management (PokeDataProvider, etc.)
+📌 📂 pages       # Next.js pages (popup, newtab, etc.)
+📌 📂 styles      # CSS and Tailwind styles
+📝 manifest.json   # Chrome extension configuration
+📝 next.config.js  # Next.js configuration
+📝 out.js          # Post-build script to fix Chrome extension paths
+📝 README.md       # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🚀 Installation & Setup
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/ZacharySompel/nextjs-chrome-boilerplate.git
+cd nextjs-chrome-boilerplate
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### **2️⃣ Install Dependencies**
+```sh
+npm install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### **3️⃣ Run in Development Mode**
+```sh
+npm run dev
+```
+- Open `http://localhost:3000` to test the extension UI.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **4️⃣ Build the Chrome Extension**
+```sh
+npm run build
+```
+- This will generate the extension in the `out/` folder.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌟 Features
+✅ **Next.js 15+** – Uses `output: "export"` for static export  
+✅ **ShadCN UI** – Modern UI components  
+✅ **TailwindCSS** – Fully customizable styles  
+✅ **IndexedDB Support** – Data caching for offline use  
+✅ **Chrome Storage API Integration**  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Customization
+### **Modify Extension Icons**
+Replace the images in `public/icons/`:
+```
+public/icons/icon16.png
+public/icons/icon32.png
+public/icons/icon48.png
+public/icons/icon128.png
+```
 
-## Deploy on Vercel
+### **Modify Manifest (Extension Settings)**
+Edit `public/manifest.json` to configure:
+- **Name & Description**
+- **Permissions**
+- **Default Popup / New Tab**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Important:** Since Next.js exports pages into subfolders (e.g., `out/newtab/index.html`), you must specify the folder paths in `manifest.json`. Example:
+```json
+"action": {
+    "default_popup": "popup/index.html"
+},
+"chrome_url_overrides": {
+    "newtab": "newtab/index.html"
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
-# nextjs-chrome-boilerplate
+### **Modify UI Components**
+Customize UI components inside `src/components/`.
+
+---
+
+## 🔥 Contributing
+Feel free to **fork** this repo and submit **pull requests**!  
+For major changes, open an issue first to discuss them.
+
+---
+
+## 🐜 License
+This project is **MIT Licensed**.
+
+---
+
+🚀 Now you have a fully documented Next.js Chrome Extension Boilerplate! Let me know if you want any tweaks! 🚀🔥

@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "NextJsExtensions",
+    "version": "1.0",
+    "description": "A Next.js-powered Chrome extension Boilerplate + Shad",
+    "icons": {
+      "16": "/icons/16.png",
+      "32": "/icons/32.png",
+      "48": "/icons/48.png",
+      "128": "/icons/128.png"
+    },
+    "action": {
+        "default_popup": "popup/index.html"
+    },
+    "chrome_url_overrides": {
+        "newtab": "newtab/index.html"
+    },
+    "background": {
+      "service_worker": "service_worker.js",
+      "type": "module"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "permissions": ["storage", "activeTab", "scripting", "tabs"]
+  }
+  
