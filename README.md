@@ -94,5 +94,3 @@ For major changes, open an issue first to discuss them.
 This project is **MIT Licensed**.
 
 ---
-
-🚀 Now you have a fully documented Next.js Chrome Extension Boilerplate! Let me know if you want any tweaks! 🚀🔥
