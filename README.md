@@ -84,12 +84,6 @@ Customize UI components inside `src/components/`.
 
 ---
 
-## 🔥 Contributing
-Feel free to **fork** this repo and submit **pull requests**!  
-For major changes, open an issue first to discuss them.
-
----
-
 ## 🐜 License
 This project is **MIT Licensed**.
 
