@@ -49,7 +49,6 @@ npm run build
 ✅ **Next.js 15+** – Uses `output: "export"` for static export  
 ✅ **ShadCN UI** – Modern UI components  
 ✅ **TailwindCSS** – Fully customizable styles  
-✅ **IndexedDB Support** – Data caching for offline use  
 ✅ **Chrome Storage API Integration**  
 
 ---
